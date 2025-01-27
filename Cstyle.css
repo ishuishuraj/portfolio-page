@@ -1,0 +1,74 @@
+.Page {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    
+  }
+
+  body {
+
+    background-color: #000000;
+    
+    
+  }
+
+
+label {
+    padding-left: 8px;
+    color: white;
+}
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.151);
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+
+  input[type=submit] {
+    background-color: #f9004d;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+
+  .container a{
+    margin-left: 45%;
+    text-align: center;
+    background-color: #f9004d;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 30px;
+    transition: 0.4s;
+  }
+  .container a:hover {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+  }
+  
+
+  .container {
+
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;    
+    border-radius: 30px;
+    background-color: #ffffff17;
+    padding: 20px;
+    position: center;
+  }
