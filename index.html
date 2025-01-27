@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishu - 3D and 2D Artist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Background shapes */
+    .background-shapes span {
+      position: fixed;
+      pointer-events: none;
+      background: rgba(36, 89, 173, 0.1);
+      animation: float 6s infinite linear;
+      z-index: 0;
+    }
+
+    .circle { border-radius: 50%; }
+    .cube { transform: rotate(45deg); }
+    .triangle { transform: rotate(30deg); }
+
+    /* Social icon animations */
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+    }
+
+    .behance:hover { color: #1769ff; }
+    .linkedin:hover { color: #0a66c2; }
+    .artstation:hover { color: #13aff0; }
+    .instagram:hover { color: #e4405f; }
+
+    /* Shape positions and sizes */
+    .background-shapes span:nth-child(1) {
+      width: 60px;
+      height: 60px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .background-shapes span:nth-child(2) {
+      width: 40px;
+      height: 40px;
+      top: 60%;
+      left: 30%;
+      animation-delay: 1s;
+    }
+
+    .background-shapes span:nth-child(3) {
+      width: 80px;
+      height: 80px;
+      top: 40%;
+      right: 20%;
+      animation-delay: 2s;
+    }
+
+    .background-shapes span:nth-child(4) {
+      width: 50px;
+      height: 50px;
+      bottom: 20%;
+      right: 10%;
+      animation-delay: 3s;
+    }
+
+    /* Ensure content stays above background */
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+  
+
+<style>
+  .logo-gradient {
+    background: linear-gradient(45deg, #3B82F6, #60A5FA);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    padding-right: 2px;
+  }
+
+  .logo-graphic {
+    font-family: 'Brush Script MT', cursive;
+    position: relative;
+  }
+
+  .logo-graphic::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  a:hover .logo-graphic::after {
+    transform: scaleX(1);
+  }
+</style>
+<!-- Logo with Illustrator Theme -->
+<a href="#" class="flex items-center space-x-2 group">
+  <svg class="w-25 h-25 transition-transform duration-200 hover:rotate-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Paintbrush Handle -->
+    <path d="M24 4L28 16L24 28L20 16L24 4Z" fill="#3B82F6" class="group-hover:fill-blue-400 transition-colors"/>
+    <!-- Brush Bristles -->
+    <path d="M16 32L24 28L32 32L24 44L16 32Z" fill="#60A5FA" class="group-hover:fill-blue-300 transition-colors"/>
+    <!-- Digital Cube -->
+    <path d="M32 16L40 20L32 24L24 20L32 16Z" fill="none" stroke="#1D4ED8" stroke-width="2" class="group-hover:stroke-blue-600 transition-colors"/>
+    <!-- Vector Curve -->
+    <path d="M8 24Q16 16 24 24Q32 32 40 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" class="group-hover:stroke-blue-500 transition-colors"/>
+  </svg>
+</a>
+
+</head>
+<body class="bg-gray-200 font-sans leading-relaxed overflow-x-hidden">
+  <!-- Animated Background Shapes -->
+  <div class="background-shapes">
+    <span class="circle"></span>
+    <span class="cube"></span>
+    <span class="circle"></span>
+    <span class="cube"></span>
+  </div>
+
+  <!-- Header Section -->
+  <header class="bg-yellow shadow-md py-4">
+    <div class="container mx-auto px-4 flex justify-between items-left ">
+      <h5 class="text-8xl font-bold text-blue-400 mb-6">PORTFOLIO PAGE </h5>
+      <nav class="flex space-x-6">
+        <a href="#" class="text-gray-600 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-600 hover:text-blue-600">More</a>
+        <a href="#" class="text-red-600 hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-50 py-16">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Hello, I'm Ishu</h1>
+        <p class="text-gray-600 mb-6">I am a passionate 3D and 2D artist with around 1 year of experience. I bring ideas to life through vibrant visuals and creative designs, collaborating with clients worldwide to create stunning projects.
+        </p>Core Work Responsibilities
+      </p>Sketching: Creating initial drafts or thumbnails to conceptualize ideas.
+    </p>Composition: Arranging visual elements to create balanced and engaging artwork.
+  </p>Color Theory: Selecting and applying colors effectively to convey mood and emphasis.
+</p>Traditional Techniques: Practicing pencil, ink, watercolor, or mixed-media artwork.
+</p>Character Design: Developing unique characters with distinct traits and personalities.
+</p>Background and Environment Art: Illustrating scenes and settings that complement the main focus.
+</p>Storyboarding: Planning scenes for animations, comics, or visual storytelling.
+</p>Style Exploration , Client Collaboration
+      
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a href="#" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700">Let&#39;s Talk</a>
+          <a href="C:\Users\raj95\Desktop\New folder\cv.png" alt="Ishu cover letter" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg shadow hover:bg-gray-300">Download CV</a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img src="C:\Users\raj95\Desktop\New folder\dp.png" alt="profile pic" class="rounded-lg shadow-md" >
+      </div>
+    </div>
+  </section>
+
+ <!-- Technology Stack Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">skill Stack</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <!-- Blender -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fab fa-blender text-4xl text-orange-500 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">Blender</h3>
+          <p class="text-gray-600 mt-2">Creating stunning 3D models and animations.</p>
+        </div>
+  
+        <!-- Photoshop -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fab fa-photoshop text-4xl text-blue-800 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">Photoshop</h3>
+          <p class="text-gray-600 mt-2">Mastering 2D designs and illustrations.</p>
+        </div>
+  
+        <!-- Illustrator -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fab fa-illustrator text-4xl text-orange-400 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">Illustrator</h3>
+          <p class="text-gray-600 mt-2">Designing detailed vector artwork.</p>
+        </div>
+  
+        <!-- Maya -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fas fa-cube text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">Maya</h3>
+          <p class="text-gray-600 mt-2">Building complex animations and 3D models.</p>
+        </div>
+  
+        <!-- Substance Painter -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fas fa-paint-brush text-4xl text-purple-500 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">Substance Painter</h3>
+          <p class="text-gray-600 mt-2">Adding textures and materials to 3D assets.</p>
+        </div>
+  
+        <!-- After Effects -->
+        <div class="p-6 bg-white shadow-md rounded-lg text-center">
+          <i class="fab fa-after-effects text-4xl text-blue-900 mb-4"></i>
+          <h3 class="text-xl font-bold text-gray-800">After Effects</h3>
+          <p class="text-gray-600 mt-2">Creating motion graphics and visual effects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Artwork Showcase Section -->
+<section class="py-16 bg-gradient-to-r>
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 text-center mb-8">My Artwork Gallery</h2>
+      <!-- Artwork Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 artwork-grid">
+        <!-- Artwork Item 1 -->
+        <div class="artwork-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+            <img src="C:\Users\raj95\Desktop\New folder\hammer.png" alt="2D Artwork 1" 
+                 class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+              <button class="view-btn opacity-0 group-hover:opacity-100 text-white text-lg bg-blue-600 px-6 py-2 rounded-full transition-opacity duration-300">
+                <i class="fas fa-expand mr-2"></i>View
+              </button>
+            </div>
+          </div>
+  
+        <!-- Artwork Item 2 -->
+        <div class="artwork-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+          <img src="C:\Users\raj95\Desktop\New folder\cafe_05.png" alt="2D Artwork 2" 
+               class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+            <button class="view-btn opacity-0 group-hover:opacity-100 text-white text-lg bg-blue-600 px-6 py-2 rounded-full transition-opacity duration-300">
+              <i class="fas fa-expand mr-2"></i>View
+            </button>
+          </div>
+        </div>
+          <!-- Artwork Item 2 -->
+          <div class="artwork-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+            <img src="C:\Users\raj95\Desktop\New folder\layout.png" alt="2D Artwork 2" 
+                 class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+              <button class="view-btn opacity-0 group-hover:opacity-100 text-white text-lg bg-blue-600 px-6 py-2 rounded-full transition-opacity duration-300">
+                <i class="fas fa-expand mr-2"></i>View
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Artwork Item 2 -->
+        <div class="artwork-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+          <img src="C:\Users\raj95\Desktop\New folder\showcase.png"
+               class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-105">
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+            <button class="view-btn opacity-0 group-hover:opacity-100 text-white text-lg bg-blue-600 px-6 py-2 rounded-full transition-opacity duration-300">
+              <i class="fas fa-expand mr-2"></i>View
+            </button>
+          </div>
+        </div>
+        <!-- Add more artwork items following the same structure -->
+      </div>
+  
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 p-8">
+        <div class="relative w-full h-full flex items-center justify-center">
+          <button id="close-btn" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+          <img id="lightbox-img" class="max-w-full max-h-full" src="" alt="Enlarged Artwork">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.artwork-item').forEach(item => {
+          item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+        });
+        
+        // Update active state
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+        button.classList.add('bg-blue-600', 'text-white');
+      });
+    });
+  
+    // Lightbox functionality
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const imgSrc = e.target.closest('.artwork-item').querySelector('img').src;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        lightboxImg.src = imgSrc;
+        lightbox.classList.remove('hidden');
+      });
+    });
+  
+    // Close lightbox
+    document.getElementById('close-btn').addEventListener('click', () => {
+      document.getElementById('lightbox').classList.add('hidden');
+    });
+  
+    // Close when clicking outside
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if(e.target === document.getElementById('lightbox')) {
+        document.getElementById('lightbox').classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Social Links Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-8"><b>Also Connect With Me On</h2></b>
+      <div class="flex justify-center space-x-8">
+        <a href="https://www.behance.net/ishaanishuraj" class="social-icon behance text-gray-600 text-4xl">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ishu-raj-200k/" class="social-icon linkedin text-gray-600 text-4xl">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.artstation.com/ishuishaanraj" class="social-icon artstation text-gray-600 text-4xl">
+          <i class="fab fa-artstation"></i>
+        </a>
+        <a href="https://www.instagram.com/is.haan_ishu?igsh=bmlsdXZ2dWVhbXk3&utm_source=qr" class="social-icon instagram text-gray-600 text-4xl">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Let&#39;s Work Together</h2>
+      <p class="text-lg mb-6">I am always open to discussing creative projects, new ideas, or opportunities to bring your visions to life.</p>
+      <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-lg shadow-lg hover:bg-gray-100">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Ishu. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Background Script -->
+  <script>
+    document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.background-shapes span');
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      shapes.forEach(shape => {
+        const shapeX = shape.offsetLeft + shape.offsetWidth / 2;
+        const shapeY = shape.offsetTop + shape.offsetHeight / 2;
+        
+        const deltaX = mouseX - shapeX;
+        const deltaY = mouseY - shapeY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        
+        if(distance < 400) {
+          shape.style.transform = `translate(${-deltaX * 0.05}px, ${-deltaY * 0.05}px)`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
